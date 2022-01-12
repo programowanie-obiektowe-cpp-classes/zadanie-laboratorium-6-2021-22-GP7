@@ -11,13 +11,13 @@ std::vector< char > foo(std::list< Human >& people)
     std::vector< char > ret_v(people.size());
     auto dodaj = [](const char& c)
     {
-        if (it->isMonster() == true)
+        if (people->isMonster() == true)
         {
-            c.push_back('n');
+            c='n';
         }
         else
         {
-            c.push_back('y');
+            c='y';
         }
     };
 
