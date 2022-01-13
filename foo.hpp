@@ -13,10 +13,10 @@ std::vector< char > foo(std::list< Human >& people)
     std::transform(
         people.rbegin(), people.rend(), ret_v.begin(), std::back_inserter(ret_v), [](Human& h) {
             if (h.isMonster()) {
-                return c = 'n';
+                return 'n';
             }
             else {
-                return c = 'y';
+                return 'y';
             };
         });
 
