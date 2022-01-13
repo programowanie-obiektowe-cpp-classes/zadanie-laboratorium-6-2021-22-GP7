@@ -12,10 +12,10 @@ std::vector< char > foo(std::list< Human >& people)
     std::for_each(people.begin(), people.end(), [](Human& n) { n.birthday(); });
     std::transform(people.rbegin(), people.rend(), std::back_inserter(ret_v), [](Human& h) {
         if (h.isMonster()) {
-            return 'n';
+            return 'y';
         }
         else {
-            return 'y';
+            return 'n';
         };
     });
 
