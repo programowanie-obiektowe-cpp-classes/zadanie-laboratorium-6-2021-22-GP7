@@ -11,8 +11,13 @@ std::vector< char > foo(std::list< Human >& people)
     std::vector< char > ret_v(people.size());
     std::for_each(people.begin(), people.end(), [](Human& n) { n.birthday(); });
     std::transform(
-        ret_v.begin(), ret_v.end(), people.rbegin(), people.rend(), [](Human& h) -> char {
-            return h.isMonster();
+        people.rbegin(), people.rend(), ret_v.begin(), std::back_inserter(ret_v), [](Human& h) {
+            if (h.isMonster()) {
+                return 'n';
+            };
+            else {
+                return 'y';
+            };
         });
 
     return ret_v;
