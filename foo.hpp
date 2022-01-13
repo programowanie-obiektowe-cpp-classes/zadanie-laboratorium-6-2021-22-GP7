@@ -14,7 +14,7 @@ std::vector< char > foo(std::list< Human >& people)
                    people.rend(),
                    ret_v.begin(),
                    std::back_inserter(ret_v),
-                   [](char c, Human& h) {
+                   [](unsigned char c, Human& h) {
                        if (h.isMonster()) {
                            return c = 'n';
                        }
